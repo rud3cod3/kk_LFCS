@@ -9,5 +9,13 @@ ctrl + alt + F2
 # First in order to use this command we need to either update or create data base
 # Use mandb 
 # Below given command will try to find all the command which has word director in thei short description
-apropos director
+apropos directory
+
+# With example
+# 2 is for commands search
+apropos -s 2 directory
+
+# Use stat command for deep information
+
+stat file.txt
 ```
