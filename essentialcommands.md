@@ -3,6 +3,8 @@
 ctrl + alt + F2
 ```
 
+```
+
 ### Suppose you forget the command we can make use of apropos
 ```bash
 # Let you see short description of all command
