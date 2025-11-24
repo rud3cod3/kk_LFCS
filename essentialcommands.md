@@ -53,7 +53,9 @@ chmod 1777 dirname
 ```bash
 # We can make use of this when finding something 
 # find by file permission
-find . -perm /4000
+find . -perm /640          # File with any of 640 permission
+find . -prem 640           # Exactly 640 permission
+find . -prem -640          # Atleast 640 permission
 
 # Find using name
 find . -name filename
@@ -80,4 +82,10 @@ find . -mtime +1        # Modified **more than 1 day ago**
 find . -cmin 10         # Metadata changed **exactly** 10 minutes ago
 find . -cmin -10        # Metadata changed **within last 10 minutes**
 find . -cmin +10        # Metadata changed **older than 10 minutes**
+
+# To include operators
+find -name "f*" -size 512k              # AND operator
+find -name "f*" -o -size 512k           # OR operator
+find -not -name "f*"                    # NOT operator
+find \! -name "f*"                      # NOT alternate
 ```
