@@ -47,8 +47,8 @@ chmod 1777 dirname
 ### Find Command
 
 #### In linux 
-Modification = create or edit
-Modified Time = Change time
+### Modification = create or edit
+### Modified Time = Change time
 
 ```bash
 # We can make use of this when finding something 
