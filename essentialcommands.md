@@ -38,12 +38,46 @@ chmod 2674 sgidfile
 ```
 
 #### STICKEY BIT
+```bash
+# Usually put on the directories
+chmod +t dirname
+chmod 1777 dirname
+```
 
+### Find Command
 
-### Find
+#### In linux 
+Modification = create or edit
+Modified Time = Change time
 
 ```bash
 # We can make use of this when finding something 
 # find by file permission
-find . --perm /4000
+find . -perm /4000
+
+# Find using name
+find . -name filename
+
+# By size 
+find . -size +20M
+
+# Casesensitive
+find . -iname filename
+find . -type f          # only files
+find . -type d          # only directories
+
+# Filter by last modified time (in minutes)
+find . -mmin 5          # Modified **exactly** 5 minutes ago
+find . -mmin -5         # Modified **within the last 5 minutes** (newer than 5 min)
+find . -mmin +5         # Modified **more than 5 minutes ago** (older than 5 min)
+
+# Modified Time in Days
+find . -mtime 1         # Modified **exactly 1 day ago** (24–48 hrs)
+find . -mtime -1        # Modified **within last 24 hours**
+find . -mtime +1        # Modified **more than 1 day ago**
+
+# Change Time in Minutes
+find . -cmin 10         # Metadata changed **exactly** 10 minutes ago
+find . -cmin -10        # Metadata changed **within last 10 minutes**
+find . -cmin +10        # Metadata changed **older than 10 minutes**
 ```
