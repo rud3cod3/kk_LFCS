@@ -89,3 +89,91 @@ find -name "f*" -o -size 512k           # OR operator
 find -not -name "f*"                    # NOT operator
 find \! -name "f*"                      # NOT alternate
 ```
+
+### Working with sed
+```bash
+# Its a streamline editor
+
+# Replace only first match
+sed 's/canada/america/'
+
+# Replace word globally in whole file
+# s = substitute string
+# g = globally
+sed 's/canada/america/d' filename       
+
+# Replace word canada to america also change in file aswell
+# i = --in-place
+sed -i 's/canada/america/d' filename    # replace word canada to america also change in file aswell
+```
+
+### Working with cut
+```bash
+# It can extract what we want from a file
+# -d = delimiter / what we are using to seprate like ' ' (Blankspace) or ',' (Comma)
+# -f = field / in this case column 1,2 
+cut -d ' ' -f 1 filename
+cut -d ',' -f 3 filename
+```
+
+### uniq and sort
+#### country.txt
+```bash
+# uniq will remove duplicate which are next to each other
+# country.txt
+canada
+america 
+palau
+america 
+america
+panama
+india 
+india
+china
+```
+### Now if we use 
+```bash
+uniq country.txt
+```
+
+### Expected Output
+```bash
+canada
+america
+palau
+america
+panama
+india
+china
+```
+
+### Working with sort
+```bash
+# Pretty easy to use it will sort everything aplhabetically
+uniq country.txt | sort 
+```
+
+### Expected Output
+```bash 
+america
+america
+canada
+china
+india
+palau
+panama
+```
+
+### Working with diff
+```bash
+# Suppose we made some config changes we forget what we changed and we have backup of that one config file in such case we can make use of this command
+diff new-conf old-conf
+
+# we can also make use of -c
+# -c = context
+diff -c new-conf old-conf 
+
+# or we can make use of -y
+# -y = side by side
+diff -y new-conf old-conf 
+```
