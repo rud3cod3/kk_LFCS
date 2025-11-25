@@ -177,3 +177,77 @@ diff -c new-conf old-conf
 # -y = side by side
 diff -y new-conf old-conf 
 ```
+
+### Working with grep
+```bash
+# Multiple Options
+# -i = to avoid cases
+# -v = to invert of what you want to find | you will get everything except what you specify in the command
+# -w = find exactly matching word
+# -r = search recursively
+# -o = only match words what you specified and then we can use it with wc -l
+
+# Exactly match PASS word
+grep '^PASS' /etc/filename
+
+# Exactly match one character between both
+# It would match with name cat, cut, etc.
+grep -r 'c.t' file
+```
+
+```bash
+# Using egrep
+# Look for 0 which is repeated 3 times next to it we can set max value aswell
+egrep -r '0{3,}' /etc/
+
+# for exactly 3 repeatation
+egrep -r '0{3}' /etc/
+
+# for max 3 zeros
+egrep -r "0{,3}" /etc/
+
+# last optional character
+# d in the disabled is optional so it would match all the words with disable wether it is disables or disabled
+egrep -r 'disabled?' /etc/
+
+# We can match enabled or disabled
+egrep -r 'disabled|enabled' /etc/
+
+# get word start from c and end with t and whatever is specified between the [] will be displayed
+egrep -r 'c[au]t' /etc/
+
+# get dev list using grep using mulitple expressions 
+egrep -r '/dev/[a-z]*[0-9]?' /etc/
+```
+
+### Different version of compression
+```bash
+# gzip
+gzip file1          # Compress
+gunzip file1.gz     # Decompress
+
+# bzip2 
+bzip2 file2         # Compress
+bunzip file2.bz2    # Decompress
+
+# xz 
+xz file3            # Compress
+unxz file3.xz       # Decompress
+
+# zip
+zip file1.zip dir_name/         # Compress
+zip -r archive.zip dir_name/    # recursively compress
+unzip file1.zip                 # Decompress
+```
+
+### Copying file to remote server
+```bash
+# Use rsync
+
+# Using dd
+# Creating backup
+sudo dd if=/home/bob/Picture of=diskimage.raw bs=1M status=progress
+
+# Restoring backup
+sudo dd if=diskimage.raw of=/dev/vda bs=1M status=progress
+```
