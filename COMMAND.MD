@@ -251,3 +251,15 @@ sudo dd if=/home/bob/Picture of=diskimage.raw bs=1M status=progress
 # Restoring backup
 sudo dd if=diskimage.raw of=/dev/vda bs=1M status=progress
 ```
+
+### Something about systemctl
+```bash
+# Now there are some services which will get started even if we disable it beacuse they are interlinked with another services they are started by other service 
+# And to stop this behaviour we can make use of mask
+# A mask service cannot be enabled or cant be started
+# We can unmask it if we want to make use of it
+sudo systemctl mask atd.service
+
+# To see all service units
+sudo systemctl list-units --type service --all
+```
