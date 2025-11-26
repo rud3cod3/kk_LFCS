@@ -263,3 +263,8 @@ sudo systemctl mask atd.service
 # To see all service units
 sudo systemctl list-units --type service --all
 ```
+
+### Creating systemd service file
+```bash
+# Servicefile
+```
