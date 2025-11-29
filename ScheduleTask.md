@@ -28,7 +28,7 @@ crontab -e
 crontab -l
 ```
 
-### Dir approact
+### Dir approach
 If we create certain directories we can run cron jobs which are described in those directories
 this directories are as following
 
