@@ -5,6 +5,14 @@
 * Day
 * Other specific time
 
+#### Use atq for que of commands set by at
+```bash
+atq
+```
+
+#### To remove this job
+atrm [ID]
+
 2. cron
 * Day
 * Few Days
@@ -42,5 +50,7 @@ weekly = /etc/cron.weekly/
 **If you have some script like scrip.sh and you want to use it as cronjob for suppose daily remove the sh extension and make it executable usiing chmod +x and then move it into the  */etc/cron.daily*   directory**
 
 ### anacron
-        * This one you may not get by default so you may have to install it.
-        * To add anacron job we need to modify /etc/anacron file.
+    * This one you may not get by default so you may have to install it.
+    * To add anacron job we need to modify /etc/anacron file.
+
+To check syntax use *cronjob -T*
