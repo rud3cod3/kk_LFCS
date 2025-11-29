@@ -11,7 +11,9 @@ atq
 ```
 
 #### To remove this job
+```bash
 atrm [ID]
+```
 
 2. cron
 * Day
