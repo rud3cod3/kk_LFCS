@@ -42,6 +42,7 @@ journalctl -b [NUMBER]
 ```
 
 ### To see last logged in users
+```bash
 last
 lastlog
 ```
