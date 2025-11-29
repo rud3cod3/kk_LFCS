@@ -38,3 +38,5 @@ hourly = /etc/cron.hourly/
 monthly = /etc/cron.monthly/
 weekly = /etc/cron.weekly/
 ```
+
+**If you have some script like scrip.sh and you want to use it as cronjob for suppose daily remove the sh extension and make it executable usiing chmod +x and then move it into the */etc/cron.daily*directory**
