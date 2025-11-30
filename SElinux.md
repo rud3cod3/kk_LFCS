@@ -25,3 +25,14 @@ ls -Z
 | **Permissive** | SELinux rules are **checked but not enforced** (logs only). |
 | **Disabled**   | SELinux is turned off.                                      |
 
+
+### Checking current mode
+```bash
+getenforce
+```
+
+### Change mode temporarily
+```bash
+sudo setenforce 0   # permissive
+sudo setenforce 1   # enforcing
+```
