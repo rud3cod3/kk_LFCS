@@ -16,3 +16,14 @@
 ```bash
 ls -Z
 ```
+
+### SELinux Modes
+
++----------------+-------------------------------------------------------------+
+| Mode           | Description                                                 |
+|----------------|-------------------------------------------------------------|
+| **Enforcing**  | SELinux rules are **checked + enforced** (strict).          |
+| **Permissive** | SELinux rules are **checked but not enforced** (logs only). |
+| **Disabled**   | SELinux is turned off.                                      |
++----------------+-------------------------------------------------------------+
+
